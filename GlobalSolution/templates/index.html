@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenNova Education</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menu.css') }}">
+</head>
+
+<body>
+    <!-- Seção Principal -->
+    <!-- Menu e Logo -->
+    <!-- Menu e Logo -->
+    <header class="menu">
+        <div class="menucontainer">
+            <div class="menulogo">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo GreenNova" />
+            </div>
+            <p class="textlogo">GreenNova Education</p>
+            <nav class="menunavigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="quiz">Quiz</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section-main">
+        <div class="section-main__intro">
+            <div class="intro__content">
+                <h1>Energia para um Futuro Sustentável</h1>
+                <p>
+                    A transição para fontes de energia renovável é essencial para enfrentar as mudanças climáticas e
+                    garantir um futuro equilibrado. Combinando inovação tecnológica e compromisso ambiental, podemos
+                    transformar o setor energético e promover um impacto positivo no planeta.
+                </p>
+            </div>
+            <div>
+                <img src="{{ url_for('static', filename='img/mascote.png') }}" alt="Mascote Flora" />
+            </div>
+        </div>
+
+        <!-- Lado Direito (Aside) -->
+        <aside class="section-main__aside">
+            <!-- Card Chat -->
+            <div id="popup-overlay"></div>
+            <!-- Botão para abrir o chat -->
+            <button class="btnChat" id="open-chat">
+                <div class="btnChat-content">
+                    <img src="{{ url_for('static', filename='img/chat.png') }}" alt="Mascote Flora" height="30px" />
+                    <span>Flora Ajuda!</span>
+                </div>
+            </button>
+
+            <!-- Overlay para o pop-up -->
+            <div id="popup-overlay"></div>
+
+            <!-- Pop-up do chat -->
+            <div id="chat-popup">
+                <div id="chatbox">
+                    <div class="message bot">
+                        <p id="chatbotMessage">Olá! Como posso te ajudar?</p>
+                    </div>
+                </div>
+                <form id="chatForm">
+                    <input type="text" id="respostaCliente" name="respostaCliente"
+                        placeholder="Digite sua resposta aqui" autocomplete="off">
+                    <button class="btnForm" type="submit">⮞</button>
+                </form>
+            </div>
+            <div class="aside__content">
+                <h2>Transforme sua visão de sustentabilidade com nosso mascote, a Flora!</h2>
+                <p>
+                    A Flora é o seu guia para um futuro mais verde. Criada para ajudar você a explorar soluções inteligentes e aprender mais sobre práticas sustentáveis, ela oferece suporte personalizado para sua jornada em direção a um mundo mais equilibrado.
+                </p>
+                <h2>Pronto para se aprofundar?</h2>
+                <p>
+                    Descubra como a tecnologia pode impulsionar a transição energética e criar um futuro mais sustentável. A Flora está aqui para conduzi-lo em uma experiência única, através de um quiz interativo, onde você pode testar seus conhecimentos sobre sustentabilidade e explorar novas possibilidades para contribuir com o planeta.
+                </p>
+                <a href="/quiz" class="btn">Comece agora e faça a diferença!</a>
+            </div>
+        </aside>
+    </section>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

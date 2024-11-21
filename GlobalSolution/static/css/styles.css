@@ -1,0 +1,118 @@
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #003319;
+}
+
+/* Seção Principal */
+.section-main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.textlogo{
+    color: #fff;
+  }
+
+/* Lado Esquerdo (Conteúdo Principal) */
+.section-main__intro {
+    display: flex;
+    flex: 1;
+    padding: 80px;
+    /* Ajuste para deixar espaço abaixo do menu */
+    background: linear-gradient(to bottom, #004526, #002b17);
+}
+
+.section-main__intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff
+}
+
+.section-main__intro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.section-main__intro img {
+    margin-left: 40%;
+    height: 700px;
+}
+
+/* Lado Direito (Aside) */
+.section-main__aside {
+    background-color: #00582d;
+    /* Cor de fundo verde escuro */
+    color: #ffffff;
+    /* Texto branco */
+    padding: 20px;
+}
+
+
+.section-main__aside {
+    position: fixed;
+    /* Fixa no lado direito */
+    top: 0;
+    right: 0;
+    width: 25%;
+    /* O lado ocupa 25% da tela */
+    height: 100%;
+    /* Preenche toda a altura */
+    min-height: 568px;
+    /* Altura mínima */
+    z-index: 10;
+    /* Certifica que o elemento está acima de outros */
+}
+
+.intro__content {
+    margin-top: 15%;
+}
+
+/* Conteúdo do Aside */
+.aside__content {
+    margin-top: 30%;
+    /* Espaçamento no topo */
+    text-align: left;
+}
+
+.aside__content h2 {
+    font: normal 700 2rem / 1.4 "Montserrat", sans-serif;
+    margin-bottom: 15px;
+    color: #fff;
+    /* Verde claro */
+}
+
+.aside__content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.aside__content .btn {
+    position: relative;
+    display: inline-block;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    padding: 10px 20px;
+    font: normal 700 1rem / 1.7 "Montserrat", sans-serif;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.aside__content .btn:hover {
+    background-color: #3f8d41;
+    border: 2px solid #3f8d41;
+    color: #070707;
+}

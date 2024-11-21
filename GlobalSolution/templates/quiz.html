@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Sustentável</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #e7f5e7;
+      /* Fundo com um tom suave de verde */
+    }
+
+    .quiz-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .quiz-container {
+      width: 90%;
+      max-width: 600px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex: 1;
+    }
+
+    .quiz-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .quiz-header h1 {
+      font-size: 1.5em;
+      color: #3f8d41;
+      /* Verde principal */
+      margin: 0;
+    }
+
+    .question {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .answers {
+      list-style: none;
+      padding: 0;
+    }
+
+    .answers li {
+      margin: 10px 0;
+    }
+
+    .answers label {
+      font-size: 1em;
+      color: #3f3f3f;
+    }
+
+    .btnQuiz {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background: #3f8d41;
+      /* Verde principal */
+      color: #fff;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    .btnQuiz:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    #mascote {
+      max-width: 150px;
+      align-self: flex-start;
+    }
+
+    /* Menu e Logo */
+    .menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      background-color: #3f8d41;
+      z-index: 4;
+      padding: 0 20px;
+    }
+
+    .menucontainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .menulogo img {
+      height: 40px;
+    }
+
+    .menunavigation ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menunavigation ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    .menunavigation ul li a:hover {
+      color: #9aff9d;
+    }
+
+    .textlogo{
+      color: #fff;
+    }
+  </style>
+</head>
+<!-- Menu e Logo -->
+<header class="menu">
+  <div class="menucontainer">
+    <div class="menulogo">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo GreenNova" />
+     
+    </div>
+    <p class="textlogo">GreenNova Education</p>
+    <nav class="menunavigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="quiz">Quiz</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<body>
+  <div class="quiz-wrapper">
+    <img id="mascote" src="{{ url_for('static', filename='img/mascote.png') }}" alt="Mascote Flora" />
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <h1>Quiz Sustentável</h1>
+      </div>
+      <div id="quiz">
+        <!-- Conteúdo do Quiz será renderizado aqui -->
+      </div>
+      <button class="btnQuiz" id="prev" disabled>Voltar</button>
+      <button class="btnQuiz" id="next" disabled>Próximo</button>
+    </div>
+  </div>
+
+  <div id="popup-overlay"></div>
+  <!-- Botão para abrir o chat -->
+  <button class="btnChat" id="open-chat">
+      <div class="btnChat-content">
+          <img src="{{ url_for('static', filename='img/chat.png') }}" alt="Mascote Flora" height="30px" />
+          <span>Flora Ajuda!</span>
+      </div>
+  </button>
+
+  <!-- Overlay para o pop-up -->
+  <div id="popup-overlay"></div>
+
+  <!-- Pop-up do chat -->
+  <div id="chat-popup">
+      <div id="chatbox">
+          <div class="message bot">
+              <p id="chatbotMessage">Olá! Como posso te ajudar?</p>
+          </div>
+      </div>
+      <form id="chatForm">
+          <input type="text" id="respostaCliente" name="respostaCliente"
+              placeholder="Digite sua resposta aqui" autocomplete="off">
+          <button class="btnForm" type="submit">⮞</button>
+      </form>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/quiz.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
